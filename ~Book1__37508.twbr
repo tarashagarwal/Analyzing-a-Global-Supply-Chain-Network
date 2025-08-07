@@ -1,0 +1,803 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.0514.2217                               -->
+<workbook original-version='18.1' source-build='2025.2.0 (20252.25.0514.2217)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='global_supply_chain_data' inline='true' name='federated.09cfevp0aodqdy13ihj5e1po4lqv' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='global_supply_chain_data' name='textscan.1g6xc041ifseyf1akdo3w1xlmgsu'>
+            <connection class='textscan' directory='C:/Users/taras/Downloads' filename='global_supply_chain_data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1g6xc041ifseyf1akdo3w1xlmgsu' name='global_supply_chain_data.csv' table='[global_supply_chain_data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='Supplier' ordinal='1' />
+            <column datatype='string' name='Country' ordinal='2' />
+            <column datatype='string' name='Manufacturer' ordinal='3' />
+            <column datatype='string' name='Region' ordinal='4' />
+            <column datatype='string' name='Warehouse' ordinal='5' />
+            <column datatype='string' name='Distribution_Center' ordinal='6' />
+            <column datatype='string' name='Product' ordinal='7' />
+            <column datatype='integer' name='Quantity' ordinal='8' />
+            <column datatype='integer' name='Unit_Cost' ordinal='9' />
+            <column datatype='integer' name='Transport_Cost' ordinal='10' />
+            <column datatype='integer' name='Delivery_Time (days)' ordinal='11' />
+            <column datatype='integer' name='Delay (days)' ordinal='12' />
+            <column datatype='integer' name='Revenue' ordinal='13' />
+            <column datatype='string' name='Mode_Of_Transport' ordinal='14' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Supplier</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Supplier]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Supplier</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Manufacturer</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Manufacturer]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Manufacturer</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Warehouse</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Warehouse]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Warehouse</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Distribution_Center</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Distribution_Center]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Distribution_Center</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Product]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Product</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quantity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Quantity]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Quantity</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unit_Cost</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Unit_Cost]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Unit_Cost</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transport_Cost</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Transport_Cost]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Transport_Cost</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Delivery_Time (days)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Delivery_Time (days)]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Delivery_Time (days)</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Delay (days)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Delay (days)]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Delay (days)</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Revenue</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Revenue]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Revenue</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Mode_Of_Transport</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Mode_Of_Transport]</local-name>
+            <parent-name>[global_supply_chain_data.csv]</parent-name>
+            <remote-alias>Mode_Of_Transport</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Total Cost' datatype='integer' name='[Calculation_2639390896348073984]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Unit_Cost] + [Transport_Cost]' />
+      </column>
+      <column caption='Profit' datatype='integer' name='[Calculation_2639390896348364801]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Revenue] - ([Unit_Cost] + [Transport_Cost]) * [Quantity]' />
+      </column>
+      <column caption='Delivery Efficiency Score' datatype='integer' name='[Calculation_2639390896348618754]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Delay (days)] = 0 THEN 1 ELSE 0 END' />
+      </column>
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Delivery Time (days)' datatype='integer' name='[Delivery_Time (days)]' role='measure' type='quantitative' />
+      <column caption='Distribution Center' datatype='string' name='[Distribution_Center]' role='dimension' type='nominal' />
+      <column caption='Mode Of Transport' datatype='string' name='[Mode_Of_Transport]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+      <column caption='Transport Cost' datatype='integer' name='[Transport_Cost]' role='measure' type='quantitative' />
+      <column caption='Unit Cost' datatype='integer' name='[Unit_Cost]' role='measure' type='quantitative' />
+      <column caption='global_supply_chain_data.csv' datatype='table' name='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' role='measure' type='quantitative' />
+      <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/taras/AppData/Local/Temp/TableauTemp/#TableauTemp_1pj0uha1hcysxn111oban1ezh332.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/07/2025 02:03:24 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>636</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Supplier</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Supplier]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Supplier</remote-alias>
+              <ordinal>1</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Country</remote-alias>
+              <ordinal>2</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Manufacturer</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Manufacturer]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Manufacturer</remote-alias>
+              <ordinal>3</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Region</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Region]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Region</remote-alias>
+              <ordinal>4</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Warehouse</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Warehouse]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Warehouse</remote-alias>
+              <ordinal>5</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Distribution_Center</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Distribution_Center]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Distribution_Center</remote-alias>
+              <ordinal>6</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Product</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Product]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Product</remote-alias>
+              <ordinal>7</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Quantity</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Quantity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Quantity</remote-alias>
+              <ordinal>8</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1039</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Unit_Cost</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Unit_Cost]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Unit_Cost</remote-alias>
+              <ordinal>9</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>252</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Transport_Cost</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Transport_Cost]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Transport_Cost</remote-alias>
+              <ordinal>10</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>91</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Delivery_Time (days)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Delivery_Time (days)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Delivery_Time (days)</remote-alias>
+              <ordinal>11</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Delay (days)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Delay (days)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Delay (days)</remote-alias>
+              <ordinal>12</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Revenue</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Revenue]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Revenue</remote-alias>
+              <ordinal>13</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1896</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Mode_Of_Transport</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Mode_Of_Transport]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Mode_Of_Transport</remote-alias>
+              <ordinal>14</ordinal>
+              <family>global_supply_chain_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Region:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;America&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Europe&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Asia&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Date' />
+        <field-sort-custom-order field='Calculation_2639390896348618754' />
+        <field-sort-custom-order field='Calculation_2639390896348364801' />
+        <field-sort-custom-order field='Calculation_2639390896348073984' />
+        <field-sort-custom-order field='Supplier' />
+        <field-sort-custom-order field='Country' />
+        <field-sort-custom-order field='Manufacturer' />
+        <field-sort-custom-order field='Region' />
+        <field-sort-custom-order field='Warehouse' />
+        <field-sort-custom-order field='Distribution_Center' />
+        <field-sort-custom-order field='Product' />
+        <field-sort-custom-order field='Quantity' />
+        <field-sort-custom-order field='Unit_Cost' />
+        <field-sort-custom-order field='Transport_Cost' />
+        <field-sort-custom-order field='Delivery_Time (days)' />
+        <field-sort-custom-order field='Delay (days)' />
+        <field-sort-custom-order field='Revenue' />
+        <field-sort-custom-order field='Mode_Of_Transport' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='global_supply_chain_data.csv' id='global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0'>
+            <properties context=''>
+              <relation connection='textscan.1g6xc041ifseyf1akdo3w1xlmgsu' name='global_supply_chain_data.csv' table='[global_supply_chain_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='Date' ordinal='0' />
+                  <column datatype='string' name='Supplier' ordinal='1' />
+                  <column datatype='string' name='Country' ordinal='2' />
+                  <column datatype='string' name='Manufacturer' ordinal='3' />
+                  <column datatype='string' name='Region' ordinal='4' />
+                  <column datatype='string' name='Warehouse' ordinal='5' />
+                  <column datatype='string' name='Distribution_Center' ordinal='6' />
+                  <column datatype='string' name='Product' ordinal='7' />
+                  <column datatype='integer' name='Quantity' ordinal='8' />
+                  <column datatype='integer' name='Unit_Cost' ordinal='9' />
+                  <column datatype='integer' name='Transport_Cost' ordinal='10' />
+                  <column datatype='integer' name='Delivery_Time (days)' ordinal='11' />
+                  <column datatype='integer' name='Delay (days)' ordinal='12' />
+                  <column datatype='integer' name='Revenue' ordinal='13' />
+                  <column datatype='string' name='Mode_Of_Transport' ordinal='14' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='global_supply_chain_data' name='federated.09cfevp0aodqdy13ihj5e1po4lqv' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.09cfevp0aodqdy13ihj5e1po4lqv'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Product]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Quantity]' derivation='Sum' name='[sum:Quantity:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[Longitude (generated)]' field-type='quantitative' max='17583071.919778492' min='-16488016.596820408' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[Latitude (generated)]' field-type='quantitative' max='11580189.165536268' min='-6714683.6444465658' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]' />
+              <size column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Quantity:qk]' />
+              <lod column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Country:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[Latitude (generated)]</rows>
+        <cols>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{240A8125-4615-4F3D-A767-6D50F348E8E7}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='global_supply_chain_data' name='federated.09cfevp0aodqdy13ihj5e1po4lqv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09cfevp0aodqdy13ihj5e1po4lqv'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Delay (days)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Product]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column-instance column='[Delay (days)]' derivation='Avg' name='[avg:Delay (days):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Product:nk]' member='&quot;Laptop&quot;' />
+              <groupfilter function='member' level='[none:Product:nk]' member='&quot;Monitor&quot;' />
+              <groupfilter function='member' level='[none:Product:nk]' member='&quot;Router&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Region:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[avg:Delay (days):qk]</rows>
+        <cols>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[mn:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{76E7130E-9FA5-4EAD-9ED7-A5728A03A1DB}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='global_supply_chain_data' name='federated.09cfevp0aodqdy13ihj5e1po4lqv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09cfevp0aodqdy13ihj5e1po4lqv'>
+            <column caption='Delivery Time (days)' datatype='integer' name='[Delivery_Time (days)]' role='measure' type='quantitative' />
+            <column caption='Mode Of Transport' datatype='string' name='[Mode_Of_Transport]' role='dimension' type='nominal' />
+            <column-instance column='[Delivery_Time (days)]' derivation='Avg' name='[avg:Delivery_Time (days):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Mode_Of_Transport]' derivation='None' name='[none:Mode_Of_Transport:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[avg:Delivery_Time (days):qk]</rows>
+        <cols>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Mode_Of_Transport:nk]</cols>
+      </table>
+      <simple-id uuid='{287512EA-C127-47A9-AF6E-785393C5FCEE}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{72A098C1-7BB9-49B9-9D9C-94C373461290}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Region:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{948503FD-0F08-401A-93C2-4371163E8680}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CDFB729A-2BE8-4297-AD0F-1A2093EE921B}' />
+    </window>
+  </windows>
+</workbook>
