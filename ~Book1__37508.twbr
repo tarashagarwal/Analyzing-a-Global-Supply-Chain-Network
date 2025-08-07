@@ -11,6 +11,7 @@
     <ObjectModelTableType />
     <SchemaViewerObjectModel />
     <SheetIdentifierTracking />
+    <SortTagCleanup />
     <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
@@ -279,16 +280,29 @@
         <calculation class='tableau' formula='IF [Delay (days)] = 0 THEN 1 ELSE 0 END' />
       </column>
       <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[Delay (days)]' role='measure' type='quantitative' />
       <column caption='Delivery Time (days)' datatype='integer' name='[Delivery_Time (days)]' role='measure' type='quantitative' />
       <column caption='Distribution Center' datatype='string' name='[Distribution_Center]' role='dimension' type='nominal' />
       <column caption='Mode Of Transport' datatype='string' name='[Mode_Of_Transport]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
       <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Revenue]' role='measure' type='quantitative' />
       <column caption='Transport Cost' datatype='integer' name='[Transport_Cost]' role='measure' type='quantitative' />
       <column caption='Unit Cost' datatype='integer' name='[Unit_Cost]' role='measure' type='quantitative' />
       <column caption='global_supply_chain_data.csv' datatype='table' name='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' role='measure' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_2639390896348073984]' derivation='Sum' name='[sum:Calculation_2639390896348073984:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2639390896348364801]' derivation='Sum' name='[sum:Calculation_2639390896348364801:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2639390896348618754]' derivation='Sum' name='[sum:Calculation_2639390896348618754:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Delay (days)]' derivation='Sum' name='[sum:Delay (days):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Delivery_Time (days)]' derivation='Sum' name='[sum:Delivery_Time (days):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Quantity]' derivation='Sum' name='[sum:Quantity:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Revenue]' derivation='Sum' name='[sum:Revenue:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Transport_Cost]' derivation='Sum' name='[sum:Transport_Cost:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Unit_Cost]' derivation='Sum' name='[sum:Unit_Cost:qk]' pivot='key' type='quantitative' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/taras/AppData/Local/Temp/TableauTemp/#TableauTemp_1pj0uha1hcysxn111oban1ezh332.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/07/2025 02:03:24 AM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/taras/AppData/Local/Temp/TableauTemp/#TableauTemp_07j854f18p1wm011dspcz1c98tcx.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/07/2025 03:00:50 AM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -526,6 +540,38 @@
               <bucket>&quot;Asia&quot;</bucket>
             </map>
           </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348618754:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Delay (days):qk]&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Transport_Cost:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348364801:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Unit_Cost:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[__tableau_internal_object_id__].[cnt:global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Delivery_Time (days):qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348073984:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Quantity:qk]&quot;</bucket>
+            </map>
+          </encoding>
         </style-rule>
       </style>
       <semantic-values>
@@ -533,6 +579,7 @@
       </semantic-values>
       <field-sort-info field-sort-order-type='custom-order'>
         <field-sort-custom-order field='Date' />
+        <field-sort-custom-order field='Calculation_2639390896367812611' />
         <field-sort-custom-order field='Calculation_2639390896348618754' />
         <field-sort-custom-order field='Calculation_2639390896348364801' />
         <field-sort-custom-order field='Calculation_2639390896348073984' />
@@ -698,9 +745,22 @@
           <datasource-dependencies datasource='federated.09cfevp0aodqdy13ihj5e1po4lqv'>
             <column caption='Delivery Time (days)' datatype='integer' name='[Delivery_Time (days)]' role='measure' type='quantitative' />
             <column caption='Mode Of Transport' datatype='string' name='[Mode_Of_Transport]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
             <column-instance column='[Delivery_Time (days)]' derivation='Avg' name='[avg:Delivery_Time (days):qk]' pivot='key' type='quantitative' />
             <column-instance column='[Mode_Of_Transport]' derivation='None' name='[none:Mode_Of_Transport:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Quantity]' derivation='Sum' name='[sum:Quantity:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <manual-sort column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Mode_Of_Transport:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>%all%</bucket>
+              <bucket>&quot;Rail&quot;</bucket>
+              <bucket>&quot;Truck&quot;</bucket>
+              <bucket>&quot;Air&quot;</bucket>
+              <bucket>&quot;Sea&quot;</bucket>
+            </dictionary>
+          </manual-sort>
           <aggregation value='true' />
         </view>
         <style />
@@ -710,12 +770,102 @@
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Region:nk]' />
+              <size column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Quantity:qk]' />
+            </encodings>
           </pane>
         </panes>
         <rows>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[avg:Delivery_Time (days):qk]</rows>
         <cols>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Mode_Of_Transport:nk]</cols>
       </table>
       <simple-id uuid='{287512EA-C127-47A9-AF6E-785393C5FCEE}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='global_supply_chain_data' name='federated.09cfevp0aodqdy13ihj5e1po4lqv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09cfevp0aodqdy13ihj5e1po4lqv'>
+            <column caption='Total Cost' datatype='integer' name='[Calculation_2639390896348073984]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Unit_Cost] + [Transport_Cost]' />
+            </column>
+            <column caption='Profit' datatype='integer' name='[Calculation_2639390896348364801]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Revenue] - ([Unit_Cost] + [Transport_Cost]) * [Quantity]' />
+            </column>
+            <column caption='Delivery Efficiency Score' datatype='integer' name='[Calculation_2639390896348618754]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Delay (days)] = 0 THEN 1 ELSE 0 END' />
+            </column>
+            <column datatype='integer' name='[Delay (days)]' role='measure' type='quantitative' />
+            <column caption='Delivery Time (days)' datatype='integer' name='[Delivery_Time (days)]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Revenue]' role='measure' type='quantitative' />
+            <column caption='Transport Cost' datatype='integer' name='[Transport_Cost]' role='measure' type='quantitative' />
+            <column caption='Unit Cost' datatype='integer' name='[Unit_Cost]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0:qk]' pivot='key' type='quantitative' />
+            <column caption='global_supply_chain_data.csv' datatype='table' name='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' role='measure' type='quantitative' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2639390896348073984]' derivation='Sum' name='[sum:Calculation_2639390896348073984:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2639390896348364801]' derivation='Sum' name='[sum:Calculation_2639390896348364801:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2639390896348618754]' derivation='Sum' name='[sum:Calculation_2639390896348618754:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Delay (days)]' derivation='Sum' name='[sum:Delay (days):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Delivery_Time (days)]' derivation='Sum' name='[sum:Delivery_Time (days):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Quantity]' derivation='Sum' name='[sum:Quantity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Revenue]' derivation='Sum' name='[sum:Revenue:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Transport_Cost]' derivation='Sum' name='[sum:Transport_Cost:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Unit_Cost]' derivation='Sum' name='[sum:Unit_Cost:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348073984:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[Multiple Values]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348073984:qk] + ([federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk] + [federated.09cfevp0aodqdy13ihj5e1po4lqv].[Multiple Values]))</rows>
+        <cols>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Region:nk]</cols>
+      </table>
+      <simple-id uuid='{9194DD5C-21C2-4A06-BEDC-070821E55E40}' />
     </worksheet>
   </worksheets>
   <windows saved-dpi-scale-factor='1.25' source-height='37'>
@@ -776,7 +926,7 @@
       </cards>
       <simple-id uuid='{948503FD-0F08-401A-93C2-4371163E8680}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 3'>
+    <window class='worksheet' name='Sheet 3'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -796,8 +946,43 @@
             <card type='title' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Quantity:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Region:nk]' type='color' />
+          </strip>
+        </edge>
       </cards>
       <simple-id uuid='{CDFB729A-2BE8-4297-AD0F-1A2093EE921B}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{032D7EAA-F639-44B3-AA21-2A685B393463}' />
     </window>
   </windows>
 </workbook>
