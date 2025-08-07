@@ -291,6 +291,8 @@
       <column caption='Unit Cost' datatype='integer' name='[Unit_Cost]' role='measure' type='quantitative' />
       <column caption='global_supply_chain_data.csv' datatype='table' name='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' role='measure' type='quantitative' />
       <column-instance column='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Delay (days)]' derivation='Avg' name='[avg:Delay (days):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Delay (days)]' derivation='Count' name='[cnt:Delay (days):qk]' pivot='key' type='quantitative' />
       <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
       <column-instance column='[Calculation_2639390896348073984]' derivation='Sum' name='[sum:Calculation_2639390896348073984:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_2639390896348364801]' derivation='Sum' name='[sum:Calculation_2639390896348364801:qk]' pivot='key' type='quantitative' />
@@ -548,6 +550,12 @@
               <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348618754:qk]&quot;</bucket>
             </map>
             <map to='#76b7b2'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[avg:Delay (days):qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[cnt:Delay (days):qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
               <bucket>&quot;[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Delay (days):qk]&quot;</bucket>
             </map>
             <map to='#9c755f'>
@@ -799,6 +807,7 @@
             </column>
             <column datatype='integer' name='[Delay (days)]' role='measure' type='quantitative' />
             <column caption='Delivery Time (days)' datatype='integer' name='[Delivery_Time (days)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Product]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
             <column datatype='string' name='[Region]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Revenue]' role='measure' type='quantitative' />
@@ -806,6 +815,8 @@
             <column caption='Unit Cost' datatype='integer' name='[Unit_Cost]' role='measure' type='quantitative' />
             <column-instance column='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0:qk]' pivot='key' type='quantitative' />
             <column caption='global_supply_chain_data.csv' datatype='table' name='[__tableau_internal_object_id__].[global_supply_chain_data.csv_651ADF7AA32C40E080069D98D22750D0]' role='measure' type='quantitative' />
+            <column-instance column='[Delay (days)]' derivation='Count' name='[cnt:Delay (days):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
             <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
             <column-instance column='[Calculation_2639390896348073984]' derivation='Sum' name='[sum:Calculation_2639390896348073984:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_2639390896348364801]' derivation='Sum' name='[sum:Calculation_2639390896348364801:qk]' pivot='key' type='quantitative' />
@@ -817,6 +828,12 @@
             <column-instance column='[Transport_Cost]' derivation='Sum' name='[sum:Transport_Cost:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Unit_Cost]' derivation='Sum' name='[sum:Unit_Cost:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <slices>
+            <column>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]</column>
+          </slices>
           <aggregation value='true' />
         </view>
         <style>
@@ -830,9 +847,6 @@
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
-            <encodings>
-              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' />
-            </encodings>
           </pane>
           <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348073984:qk]'>
             <view>
@@ -840,7 +854,7 @@
             </view>
             <mark class='Automatic' />
             <encodings>
-              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' />
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]' />
             </encodings>
           </pane>
           <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk]'>
@@ -861,11 +875,107 @@
               <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' />
             </encodings>
           </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348364801:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' />
+            </encodings>
+          </pane>
         </panes>
-        <rows>([federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348073984:qk] + ([federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk] + [federated.09cfevp0aodqdy13ihj5e1po4lqv].[Multiple Values]))</rows>
-        <cols>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Region:nk]</cols>
+        <rows>([federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348073984:qk] + ([federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk] + ([federated.09cfevp0aodqdy13ihj5e1po4lqv].[Multiple Values] + [federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Calculation_2639390896348364801:qk])))</rows>
+        <cols>([federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Region:nk] * [federated.09cfevp0aodqdy13ihj5e1po4lqv].[cnt:Delay (days):qk])</cols>
       </table>
       <simple-id uuid='{9194DD5C-21C2-4A06-BEDC-070821E55E40}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='global_supply_chain_data' name='federated.09cfevp0aodqdy13ihj5e1po4lqv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09cfevp0aodqdy13ihj5e1po4lqv'>
+            <column datatype='integer' name='[Delay (days)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Product]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Supplier]' role='dimension' type='nominal' />
+            <column-instance column='[Delay (days)]' derivation='Avg' name='[avg:Delay (days):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Delay (days)]' derivation='Count' name='[cnt:Delay (days):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Supplier]' derivation='None' name='[none:Supplier:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]' />
+              <text column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[avg:Delay (days):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Supplier:nk]</rows>
+        <cols>[federated.09cfevp0aodqdy13ihj5e1po4lqv].[cnt:Delay (days):qk]</cols>
+      </table>
+      <simple-id uuid='{408D1F4C-0AAB-4573-A912-C2A4D91CEE39}' />
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='global_supply_chain_data' name='federated.09cfevp0aodqdy13ihj5e1po4lqv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09cfevp0aodqdy13ihj5e1po4lqv'>
+            <column datatype='string' name='[Product]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Revenue]' role='measure' type='quantitative' />
+            <column-instance column='[Product]' derivation='None' name='[none:Product:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Revenue]' derivation='Sum' name='[sum:Revenue:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk]' />
+              <color column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk]' />
+              <text column='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{17F38697-2D5F-448E-A0AB-ABAB5F18EA10}' />
     </worksheet>
   </worksheets>
   <windows saved-dpi-scale-factor='1.25' source-height='37'>
@@ -955,7 +1065,7 @@
       </cards>
       <simple-id uuid='{CDFB729A-2BE8-4297-AD0F-1A2093EE921B}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 4'>
+    <window class='worksheet' name='Sheet 4'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -978,11 +1088,68 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card pane-specification-id='1' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' type='color' />
+            <card pane-specification-id='2' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[:Measure Names]' type='color' />
+            <card pane-specification-id='1' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]' type='color' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{032D7EAA-F639-44B3-AA21-2A685B393463}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[none:Product:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4208B218-8DA8-4F5A-BF1B-13EC7BE4A0F2}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.09cfevp0aodqdy13ihj5e1po4lqv].[sum:Revenue:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AAB2C53B-E469-444F-B131-1C1E6960766A}' />
     </window>
   </windows>
 </workbook>
